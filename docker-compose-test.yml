@@ -1,0 +1,20 @@
+version: '2'
+services:
+  apitemplate-test:
+    restart: on-failure
+    networks:
+      - apitemplate-test
+    image: apitemplate-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    command: python -m pytest --cov -s -v
+    environment:
+      TEST_MODE: "false"
+
+volumes:
+  apitemplate-data-vol-test:
+
+networks:
+  apitemplate-test:

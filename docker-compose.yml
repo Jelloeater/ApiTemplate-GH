@@ -1,0 +1,24 @@
+version: '2'
+services:
+  apitest-deploy:
+    restart: on-failure
+    networks:
+      - apitest-deploy
+    image: localhost:5000/apitest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app/App
+    command: python Main.py
+    environment:
+      TEST_MODE: "false"
+
+    ports:
+      - "8080:8080"
+      - "8082:8082"
+
+volumes:
+  apitest-data-vol-deploy:
+
+networks:
+  apitest-deploy:

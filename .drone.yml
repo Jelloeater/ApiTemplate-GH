@@ -1,0 +1,46 @@
+kind: pipeline
+type: docker
+name: python
+
+steps:
+- name: test-python
+  image: python
+  commands:
+  - pip install -r requirements.txt
+  - pip freeze
+  - ls -a
+  - ls App -R -a
+  - python -m pytest --cov -s -v
+
+---
+
+kind: pipeline
+type: docker
+name: docker
+depends_on:
+  - python
+
+volumes:
+- name: dockersock
+  host:
+    path: /var/run/docker.sock
+
+steps:
+- name: build_and_publish
+  image: docker:dind
+#  privileged: true
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
+  commands:
+    - docker-compose build
+    - docker-compose push
+
+- name: clean
+  image: docker:dind
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
+  commands:
+    - docker system prune -a --volumes -f
+
