@@ -33,8 +33,15 @@ steps:
   - name: dockersock
     path: /var/run/docker.sock
   commands:
+    - docker login -u="jelloeater" -p="0cf0f39f8b27398b2c15e787613ed2df194c288f"
     - docker-compose build
     - docker-compose push
+#  settings:
+#    registry: scm.itpcon.net:444
+#    username: jelloeater
+#    password: 0cf0f39f8b27398b2c15e787613ed2df194c288f
+#    repo: jelloeater/ApiTemplate
+#    tags: latest
 
 - name: clean
   image: docker:dind
