@@ -4,7 +4,7 @@ services:
     restart: on-failure
     networks:
       - apitest-deploy
-    image: localhost:5000/apitest
+    image: scm.itpcon.net:444/jelloeater/ApiTemplate
     build:
       context: .
       dockerfile: Dockerfile
