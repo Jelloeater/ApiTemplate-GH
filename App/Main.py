@@ -6,7 +6,7 @@ import settings
 #Setup Handler
 syslog_handler = logging.handlers.SysLogHandler(address=(settings.syslog_server, settings.syslog_port))
 console_handler = logging.StreamHandler()
-syslog_handler.setFormatter(logging.Formatter("CAL-LINK \n[%(asctime)s] [%(levelname)8s] --- %(message)s (%(filename)s:%(funcName)s():%(lineno)s)"))
+syslog_handler.setFormatter(logging.Formatter("Web-App \n[%(asctime)s] [%(levelname)8s] --- %(message)s (%(filename)s:%(funcName)s():%(lineno)s)"))
 # This needs a new line break for Greylog to parse source
 console_handler.setFormatter(logging.Formatter("[%(asctime)s] [%(levelname)8s] --- %(message)s (%(filename)s:%(funcName)s():%(lineno)s)"))
 
