@@ -1,0 +1,8 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": [
+            "file:///Users/jesse/CodingWorkspace/Misc_Projects/Python_Projs/ApiTemplate-GH/.github/workflows/input.yaml",
+            "file:///Users/jesse/CodingWorkspace/Misc_Projects/Python_Projs/ApiTemplate-GH/.github/workflows/test.yaml"
+        ]
+    }
+}

@@ -1,3 +1,5 @@
+[![Python package](https://github.com/Jelloeater/ApiTemplate-GH/actions/workflows/test.yaml/badge.svg)](https://github.com/Jelloeater/ApiTemplate-GH/actions/workflows/test.yaml)
+
 This is a nice template project I cooked up using Drone CI/CD
 
 If you feel like running it yourself, give it a shot!
